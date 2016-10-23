@@ -146,7 +146,6 @@ project "fbx-conv"
 		kind "ConsoleApp"
 		buildoptions { "-Wall" }
 		libdirs {
-			(FBX_SDK_ROOT .. "/lib/gcc4/ub"),
 			"./libs/libpng/lib/macosx",
 			"./libs/zlib/lib/macosx",
 		}
@@ -159,10 +158,10 @@ project "fbx-conv"
 
 	configuration { "macosx", "Debug" }
 		libdirs {
-			(FBX_SDK_ROOT .. "/lib/gcc4/ub/debug"),
+			(FBX_SDK_ROOT .. "/lib/clang/debug"),
 		}
 		
 	configuration { "macosx", "Release" }
 		libdirs {
-			(FBX_SDK_ROOT .. "/lib/gcc4/ub/release"),
+			(FBX_SDK_ROOT .. "/lib/clang/release"),
 		}
