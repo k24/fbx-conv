@@ -52,3 +52,39 @@ Building
 You'll need premake and an installation of the FBX SDK 2014. Once installed/downloaded, set the
 FBX_SDK_ROOT to the directory where you installed the FBX SDK. Then run one of the 
 generate_XXX scripts. These will generate a Visual Studio/XCode project, or a Makefile.
+
+## On MacOSX Example
+
+### Prepare
+
+- Install FBX SDK 2017
+- Install Xcode
+
+```sh
+# Used in generate
+brew install premake
+# Command line build
+xcode-select --install
+```
+
+### Generate
+
+```sh
+# Set installed path as env
+export FBX_SDK_ROOT=/Applications/Autodesk/FBX SDK/2017.0.1
+# Get source
+git clone https://github.com/k24/fbx-conv
+git checkout feature/update-for-fbx_sdk-2017-on-mac
+# Generate project
+./generate_xcode
+```
+
+### Build
+
+- Configure
+ - Open build/xcode3/fbx-conv.xcodeproj/
+ - Modify C Standard Library to libstdc++
+- Build
+ - Build
+
+Then fbx-conv will be created at your work directory.
